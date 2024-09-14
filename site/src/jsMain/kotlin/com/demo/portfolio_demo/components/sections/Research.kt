@@ -15,13 +15,14 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
-import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
+import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.cssRem
-import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.dom.Span
 
 @Composable
 fun Research() {
@@ -46,6 +47,45 @@ fun Research() {
                 )
                 .fontFamily(Res.Fonts.DM_SANS)
         )
+
+        Span(
+            SectionDescriptionStyle.toModifier()
+                .textAlign(TextAlign.Center)
+                .fontFamily(Res.Fonts.DM_SANS)
+                .color(
+                    when (ColorMode.current) {
+                        ColorMode.LIGHT -> Colors.Gray
+                        ColorMode.DARK -> Colors.DimGray
+                    }
+                )
+                .toAttrs()
+        ) {
+            SpanText(
+                text = Constants.DISSERTATION
+            )
+            SpanText(
+                text = Constants.RESEARCH_DISSERTATION_TEXT,
+                modifier = Modifier
+                    .color(
+                        when (ColorMode.current) {
+                            ColorMode.LIGHT -> Colors.Black
+                            ColorMode.DARK -> Colors.White
+                        }
+                    )
+            )
+        }
+        /*SpanText(
+            text = Constants.RESEARCH_DISSERTATION_TEXT,
+            modifier = SectionDescriptionStyle.toModifier()
+                .textAlign(TextAlign.Center)
+                .color(
+                    when (ColorMode.current) {
+                        ColorMode.LIGHT -> Colors.Gray
+                        ColorMode.DARK -> Colors.DimGray
+                    }
+                )
+                .fontFamily(Res.Fonts.DM_SANS)
+        )*/
 
         SimpleGrid(
             modifier = Modifier.fillMaxWidth().margin(top = 1.cssRem),

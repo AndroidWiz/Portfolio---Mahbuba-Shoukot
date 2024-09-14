@@ -4,11 +4,11 @@ import com.varabyte.kobweb.compose.css.FontSize
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fontSize
 import com.varabyte.kobweb.compose.ui.modifiers.margin
-import com.varabyte.kobweb.silk.components.style.ComponentStyle
-import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.style.CssStyle
+import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import org.jetbrains.compose.web.css.cssRem
 
-val SectionTitleStyle by ComponentStyle {
+val SectionTitleStyle = CssStyle {
     base {
         Modifier.fontSize(FontSize.Large)
     }
@@ -23,7 +23,7 @@ val SectionTitleStyle by ComponentStyle {
     }
 }
 
-val SectionDescriptionStyle by ComponentStyle {
+val SectionDescriptionStyle = CssStyle {
     base {
         Modifier.fontSize(FontSize.XSmall)
             .margin(topBottom = 0.75.cssRem)

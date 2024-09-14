@@ -11,9 +11,9 @@ import org.jetbrains.compose.web.css.em
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.backgroundColor
 import com.varabyte.kobweb.compose.ui.modifiers.scale
-import com.varabyte.kobweb.silk.components.style.ComponentStyle
-import com.varabyte.kobweb.silk.components.style.hover
-import com.varabyte.kobweb.silk.components.style.toModifier
+import com.varabyte.kobweb.silk.style.CssStyle
+import com.varabyte.kobweb.silk.style.selectors.hover
+import com.varabyte.kobweb.silk.style.toModifier
 
 @Composable
 fun IconButton(
@@ -30,7 +30,7 @@ fun IconButton(
 }
 
 
-val FooterIconsStyle by ComponentStyle {
+val FooterIconsStyle = CssStyle {
     hover {
         Modifier.scale(1.1) // TODO: Try changing color on hover
     }

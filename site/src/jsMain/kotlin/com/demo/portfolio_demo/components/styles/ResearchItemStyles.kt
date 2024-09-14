@@ -5,14 +5,13 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fontSize
 import com.varabyte.kobweb.compose.ui.modifiers.minHeight
 import com.varabyte.kobweb.compose.ui.modifiers.width
-import com.varabyte.kobweb.silk.components.style.ComponentStyle
-import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.style.CssStyle
+import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.percent
-import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.vh
 
-val ResearchItemSubtitleStyle by ComponentStyle {
+val ResearchItemSubtitleStyle = CssStyle {
     base {
         Modifier.fontSize(FontSize.XXSmall)
     }
@@ -27,7 +26,7 @@ val ResearchItemSubtitleStyle by ComponentStyle {
     }
 }
 
-val ResearchItemTitleStyle by ComponentStyle {
+val ResearchItemTitleStyle = CssStyle {
     base {
         Modifier.fontSize(FontSize.Small)
     }
@@ -46,7 +45,7 @@ val ResearchItemTitleStyle by ComponentStyle {
     }
 }
 
-val ResearchStyle by ComponentStyle {
+val ResearchStyle = CssStyle {
     base {
         Modifier
             .width(100.percent)

@@ -10,8 +10,6 @@ import com.demo.portfolio_demo.components.styles.UsersMessageStyle
 import com.demo.portfolio_demo.HeadlineTextStyle
 import com.demo.portfolio_demo.SubheadlineTextStyle
 import com.demo.portfolio_demo.components.widgets.CircleImage
-import com.demo.portfolio_demo.components.widgets.PhotographImage
-import com.demo.portfolio_demo.toSitePalette
 import com.demo.portfolio_demo.utils.Constants
 import com.demo.portfolio_demo.utils.CustomColorSchemes
 import com.demo.portfolio_demo.utils.Res
@@ -23,14 +21,12 @@ import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.core.rememberPageContext
-import com.varabyte.kobweb.silk.components.animation.toAnimation
 import com.varabyte.kobweb.silk.components.forms.Button
 import com.varabyte.kobweb.silk.components.forms.ButtonSize
-import com.varabyte.kobweb.silk.components.graphics.Image
-import com.varabyte.kobweb.silk.components.style.toAttrs
-import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
+import com.varabyte.kobweb.silk.style.animation.toAnimation
 import com.varabyte.kobweb.silk.style.toAttrs
+import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.AnimationTimingFunction
 import org.jetbrains.compose.web.css.percent

@@ -2,11 +2,11 @@ package com.demo.portfolio_demo.components.styles
 
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.scale
-import com.varabyte.kobweb.silk.components.style.ComponentStyle
-import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.style.CssStyle
+import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import org.jetbrains.compose.web.css.percent
 
-val BackgroundImageStyle by ComponentStyle {
+val BackgroundImageStyle = CssStyle {
     base {
         Modifier.scale(25.percent)
     }

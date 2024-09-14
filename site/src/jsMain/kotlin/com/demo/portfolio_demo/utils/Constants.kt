@@ -22,6 +22,8 @@ object Constants {
 
     const val RESEARCH_TITLE = "Research."
     const val RESEARCH_SECTION_TEXT = "My research in development has focused on examining the multifaceted aspects of socio-economic progress, with a particular emphasis on sustainable development goals. Through comprehensive analysis and empirical studies, I aim to contribute meaningful insights to the ongoing discourse on fostering equitable and inclusive development strategies."
+    const val RESEARCH_DISSERTATION_TEXT = "Cultural and Religious Influences on Women's Rights and the Social Prejudice Faced by Divorced Women in Bangladesh."
+    const val DISSERTATION = "Dissertation: "
 
     const val PHOTOGRAPH_TITLE = "Sometimes I love to click."
 

@@ -3,15 +3,15 @@ package com.demo.portfolio_demo.components.styles
 import com.varabyte.kobweb.compose.css.FontSize
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
-import com.varabyte.kobweb.silk.components.animation.Keyframes
-import com.varabyte.kobweb.silk.components.style.ComponentStyle
-import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.style.CssStyle
+import com.varabyte.kobweb.silk.style.animation.Keyframes
+import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.vh
 
-val HeroSectionStyle by ComponentStyle {
+val HeroSectionStyle = CssStyle {
     base {
         Modifier
             .width(100.percent)
@@ -45,7 +45,7 @@ val HeroSectionStyle by ComponentStyle {
     }
 }
 
-val HelloImStyle by ComponentStyle {
+val HelloImStyle = CssStyle {
     base {
         Modifier.fontSize(FontSize.Medium).margin(top = 2.cssRem)
     }
@@ -60,7 +60,7 @@ val HelloImStyle by ComponentStyle {
     }
 }
 
-val UserNameStyle by ComponentStyle {
+val UserNameStyle = CssStyle {
     base {
         Modifier.fontSize(FontSize.XLarge)
     }
@@ -75,7 +75,7 @@ val UserNameStyle by ComponentStyle {
     }
 }
 
-val UsersMessageStyle by ComponentStyle {
+val UsersMessageStyle = CssStyle {
     base {
         Modifier.fontSize(FontSize.Medium)
     }
@@ -90,7 +90,7 @@ val UsersMessageStyle by ComponentStyle {
     }
 }
 
-val HeroContainerKeyFrames by Keyframes {
+val HeroContainerKeyFrames = Keyframes {
     0.percent {
         Modifier
             .margin(top = 50.px)

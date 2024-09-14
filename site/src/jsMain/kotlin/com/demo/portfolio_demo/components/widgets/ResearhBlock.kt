@@ -1,12 +1,9 @@
 package com.demo.portfolio_demo.components.widgets
 
 import androidx.compose.runtime.Composable
-import com.demo.portfolio_demo.components.model.Researches
-import com.demo.portfolio_demo.components.model.WorkExperience
+import com.demo.portfolio_demo.components.model.*
 import com.demo.portfolio_demo.components.styles.*
-import com.demo.portfolio_demo.utils.Constants
 import com.demo.portfolio_demo.utils.Res
-import com.varabyte.kobweb.compose.css.BackgroundClip
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -17,15 +14,13 @@ import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.core.rememberPageContext
-import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
+import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import com.varabyte.kobweb.silk.theme.shapes.Rect
-import com.varabyte.kobweb.silk.theme.shapes.RectF
 import com.varabyte.kobweb.silk.theme.shapes.clip
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.cssRem
-import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 
 @Composable

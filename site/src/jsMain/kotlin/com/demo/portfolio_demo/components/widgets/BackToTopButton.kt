@@ -7,11 +7,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import com.demo.portfolio_demo.utils.Res
-import com.varabyte.kobweb.compose.css.CSSTransition
-import com.varabyte.kobweb.compose.css.Cursor
-import com.varabyte.kobweb.compose.css.FontWeight
-import com.varabyte.kobweb.compose.css.PointerEvents
-import com.varabyte.kobweb.compose.css.Visibility
+import com.varabyte.kobweb.compose.css.*
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -38,13 +34,13 @@ import com.varabyte.kobweb.compose.ui.modifiers.translateY
 import com.varabyte.kobweb.compose.ui.modifiers.visibility
 import com.varabyte.kobweb.compose.ui.modifiers.zIndex
 import com.varabyte.kobweb.compose.ui.styleModifier
-import com.varabyte.kobweb.silk.components.animation.Keyframes
-import com.varabyte.kobweb.silk.components.animation.toAnimation
-import com.varabyte.kobweb.silk.components.style.ComponentStyle
-import com.varabyte.kobweb.silk.components.style.base
-import com.varabyte.kobweb.silk.components.style.hover
-import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
+import com.varabyte.kobweb.silk.style.CssStyle
+import com.varabyte.kobweb.silk.style.animation.Keyframes
+import com.varabyte.kobweb.silk.style.animation.toAnimation
+import com.varabyte.kobweb.silk.style.base
+import com.varabyte.kobweb.silk.style.selectors.hover
+import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import kotlinx.browser.document
 import kotlinx.browser.window
@@ -60,7 +56,7 @@ import org.w3c.dom.ScrollBehavior
 import org.w3c.dom.ScrollToOptions
 
 
-val ArrowUpStyle by ComponentStyle.base {
+val ArrowUpStyle = CssStyle.base {
     Modifier
         .fontFamily(Res.Fonts.Space_Grotesk)
         .fontWeight(FontWeight.Light)
@@ -68,7 +64,7 @@ val ArrowUpStyle by ComponentStyle.base {
 }
 
 
-val BackToTopButtonStyle by ComponentStyle {
+val BackToTopButtonStyle = CssStyle {
     base {
         Modifier
             .size(50.px)
@@ -82,9 +78,10 @@ val BackToTopButtonStyle by ComponentStyle {
                 property("pointer-events", "auto")
             }
             .transition(
-                CSSTransition(
+                Transition.of(
                     property = "translate",
-                    duration = 200.ms, timingFunction = AnimationTimingFunction.Ease
+                    duration = 200.ms, timingFunction = AnimationTimingFunction.Ease,
+                    delay = null
                 )
             )
     }
@@ -94,7 +91,7 @@ val BackToTopButtonStyle by ComponentStyle {
 }
 
 
-val FadeInKeyFrames by Keyframes {
+val FadeInKeyFrames = Keyframes {
     0.percent {
         Modifier
             .opacity(0)

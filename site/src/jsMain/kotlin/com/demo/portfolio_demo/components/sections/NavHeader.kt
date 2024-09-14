@@ -21,8 +21,6 @@ import com.varabyte.kobweb.silk.components.layout.breakpoint.displayIfAtLeast
 import com.varabyte.kobweb.silk.components.layout.breakpoint.displayUntil
 import com.varabyte.kobweb.silk.components.overlay.Overlay
 import com.varabyte.kobweb.silk.components.overlay.OverlayVars
-import com.varabyte.kobweb.silk.components.style.ComponentStyle
-import com.varabyte.kobweb.silk.components.style.base
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
@@ -33,12 +31,14 @@ import com.varabyte.kobweb.compose.css.functions.blur
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.compose.ui.toAttrs
+import com.varabyte.kobweb.silk.style.CssStyle
+import com.varabyte.kobweb.silk.style.base
 import kotlinx.browser.document
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Text
 import org.w3c.dom.Element
 
-val NavHeaderStyle by ComponentStyle.base {
+val NavHeaderStyle = CssStyle.base {
     Modifier
         .background(rgba(255, 255, 255, 0f))
         .fillMaxWidth().padding(1.cssRem)
