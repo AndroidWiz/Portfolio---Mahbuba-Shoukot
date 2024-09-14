@@ -27,6 +27,9 @@ object Constants {
 
     const val PHOTOGRAPH_TITLE = "Sometimes I love to click."
 
+    const val EDUCATION_TITLE = "Education."
+    const val EDUCATION_SECTION_TITLE = "As a graduate in English Literature from American International University Dhaka (AIUB), I have successfully earned a Post-Graduation Diploma (PGDIR) in International Relations from Dhaka University."
+
     const val WRITING_TITLE = "Writings."
     const val WRITING_SECTION_TEXT = "Writing is the picturizations of unspoken words."
     const val MORE_ON_TUMBLR = "More on Tumblr."

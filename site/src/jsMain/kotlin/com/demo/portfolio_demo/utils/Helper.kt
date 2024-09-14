@@ -1,5 +1,6 @@
 package com.demo.portfolio_demo.utils
 
+import com.demo.portfolio_demo.components.model.EducationData
 import com.demo.portfolio_demo.components.model.Researches
 import com.demo.portfolio_demo.components.model.WorkExperience
 
@@ -14,7 +15,7 @@ fun getAllWorkExperience() = listOf(
         sequenceNumber = "01",
         role = "Program Officer (Education)",
         organization = "Unnayan Sangha (Jamalpur)",
-        duration = "Dec 2021 - June 2023"
+        duration = "Dec 2021 - Jun 2023"
     ),
     WorkExperience(
         sequenceNumber = "02",
@@ -127,5 +128,22 @@ fun getAllResearch() = listOf(
         link = "",
         type = "Unpublished"
     )
+)
 
+fun getAllEducation() = listOf(
+    EducationData(
+        degree = "Master's in Global Development",
+        institution = "University of East Anglia",
+        duration = "Sep 2023 - Sep 2024"
+    ),
+    EducationData(
+        degree = "Post-Graduation Diploma in International Relations",
+        institution = "University of Dhaka",
+        duration = "2017 - 2018"
+    ),
+    EducationData(
+        degree = "BA in English Literature",
+        institution = "American International University of Bangladesh (AIUB)",
+        duration = "2013 - 2016"
+    )
 )

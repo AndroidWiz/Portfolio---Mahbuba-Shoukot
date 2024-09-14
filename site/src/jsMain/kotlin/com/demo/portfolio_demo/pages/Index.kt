@@ -23,6 +23,7 @@ fun HomePage() {
                 Column {
                     Home()
                     About()
+                    Education()
                     Research()
                     Experience()
                     Photography()

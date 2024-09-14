@@ -79,6 +79,7 @@ fun scrollToElement(id: String) {
 private fun MenuItems() {
     NavLink("home", "Home")
     NavLink("about", "About")
+    NavLink("education", "Education")
     NavLink("research", "Research")
     NavLink("experience", "Experience")
     NavLink("photography", "Photography")
