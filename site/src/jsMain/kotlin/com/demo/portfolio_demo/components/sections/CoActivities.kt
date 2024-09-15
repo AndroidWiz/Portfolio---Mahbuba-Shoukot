@@ -48,7 +48,7 @@ fun CoActivities() {
                 .fontFamily(Res.Fonts.DM_SANS)
         )
 
-        SimpleGrid(modifier = Modifier.margin(top = 30.px), numColumns = numColumns(base = 2, lg = 2)) {
+        SimpleGrid(modifier = Modifier.margin(top = 30.px), numColumns = numColumns(base = 1, lg = 2)) {
 
             val allCoActivities = getAllCoActivities()
 
