@@ -82,6 +82,7 @@ private fun MenuItems() {
     NavLink("education", "Education")
     NavLink("research", "Research")
     NavLink("experience", "Experience")
+    NavLink("co-activities", "Co-Curricular Activities")
     NavLink("photography", "Photography")
     NavLink("writings", "Writings")
 }

@@ -27,8 +27,11 @@ object Constants {
 
     const val PHOTOGRAPH_TITLE = "Sometimes I love to click."
 
+    const val CO_CURRICULAR_ACTIVITIES_TITLE = "Co-Curricular Activities."
+    const val CO_CURRICULAR_ACTIVITIES_SECTION_TEXT = "Engaged in diverse extracurricular pursuits, I actively participated in cultural events and community service, showcasing a well-rounded commitment beyond academics. My experiences have enriched my perspective and strengthened my interpersonal skills."
+
     const val EDUCATION_TITLE = "Education."
-    const val EDUCATION_SECTION_TITLE = "As a graduate in English Literature from American International University Dhaka (AIUB), I have successfully earned a Post-Graduation Diploma (PGDIR) in International Relations from Dhaka University."
+    const val EDUCATION_SECTION_TEXT = "As a graduate in English Literature from American International University Dhaka (AIUB), I have successfully earned a Post-Graduation Diploma (PGDIR) in International Relations from Dhaka University."
 
     const val WRITING_TITLE = "Writings."
     const val WRITING_SECTION_TEXT = "Writing is the picturizations of unspoken words."

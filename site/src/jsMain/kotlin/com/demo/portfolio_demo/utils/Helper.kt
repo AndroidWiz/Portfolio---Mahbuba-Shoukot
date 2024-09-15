@@ -43,6 +43,16 @@ fun getAllWorkExperience() = listOf(
     )
 )
 
+fun getAllCoActivities() =
+    listOf(
+        Pair(Res.Images.CO_ACTIVITY_IMAGE_1, ""),
+        Pair(Res.Images.CO_ACTIVITY_IMAGE_2, ""),
+        Pair(Res.Images.CO_ACTIVITY_IMAGE_3, "AIUB Debate Club Events"),
+        Pair(Res.Images.CO_ACTIVITY_IMAGE_4, "Participation of drama seven deadly sins by Christopher Marlow"),
+        Pair(Res.Images.CO_ACTIVITY_IMAGE_5, "Public speaking and hosting"),
+        Pair(Res.Images.CO_ACTIVITY_IMAGE_6, "Seminar on writing club ''wordsmiths pen"),
+    )
+
 fun getAllPhotographs() =
     listOf(
         Res.Images.IMAGE_1,

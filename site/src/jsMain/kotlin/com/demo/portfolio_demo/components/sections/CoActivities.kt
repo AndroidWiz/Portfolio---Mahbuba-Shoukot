@@ -1,15 +1,16 @@
 package com.demo.portfolio_demo.components.sections
 
 import androidx.compose.runtime.Composable
+import com.demo.portfolio_demo.components.styles.CoActivityStyle
 import com.demo.portfolio_demo.components.styles.SectionDescriptionStyle
 import com.demo.portfolio_demo.components.styles.WritingsStyle
-import com.demo.portfolio_demo.components.widgets.EducationBlock
+import com.demo.portfolio_demo.components.widgets.CoActivitiesBlock
+import com.demo.portfolio_demo.components.widgets.PhotographImage
 import com.demo.portfolio_demo.components.widgets.SectionTitle
-import com.demo.portfolio_demo.components.widgets.WorkExperienceBlock
 import com.demo.portfolio_demo.utils.Constants
 import com.demo.portfolio_demo.utils.Res
-import com.demo.portfolio_demo.utils.getAllEducation
-import com.demo.portfolio_demo.utils.getAllWorkExperience
+import com.demo.portfolio_demo.utils.getAllCoActivities
+import com.demo.portfolio_demo.utils.getAllPhotographs
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -22,20 +23,20 @@ import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
-import org.jetbrains.compose.web.css.cssRem
+import org.jetbrains.compose.web.css.px
 
 @Composable
-fun Education() {
+fun CoActivities() {
     Column(
-        modifier = WritingsStyle.toModifier().id("education"),
+        modifier = CoActivityStyle.toModifier().id("co-activities"),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        SectionTitle(Constants.EDUCATION_TITLE)
+        SectionTitle(Constants.CO_CURRICULAR_ACTIVITIES_TITLE)
 
         SpanText(
-            text = Constants.EDUCATION_SECTION_TEXT,
+            text = Constants.CO_CURRICULAR_ACTIVITIES_SECTION_TEXT,
             modifier = SectionDescriptionStyle.toModifier()
                 .textAlign(TextAlign.Center)
                 .color(
@@ -47,14 +48,13 @@ fun Education() {
                 .fontFamily(Res.Fonts.DM_SANS)
         )
 
-        SimpleGrid(
-            numColumns = numColumns(base = 1),
-            modifier = Modifier.margin(top = 1.5.cssRem, bottom = 2.cssRem)
-        ) {
-            val education = getAllEducation()
+        SimpleGrid(modifier = Modifier.margin(top = 30.px), numColumns = numColumns(base = 2, lg = 2)) {
 
-            repeat(education.size) {
-                EducationBlock(education = education[it])
+            val allCoActivities = getAllCoActivities()
+
+            repeat(allCoActivities.size) {
+                val coActivity = allCoActivities[it]
+                CoActivitiesBlock(src = coActivity.first, title = coActivity.second)
             }
         }
     }

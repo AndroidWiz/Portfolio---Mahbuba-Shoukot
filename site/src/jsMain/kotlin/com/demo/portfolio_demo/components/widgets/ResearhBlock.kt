@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import com.demo.portfolio_demo.components.model.*
 import com.demo.portfolio_demo.components.styles.*
 import com.demo.portfolio_demo.utils.Res
+import com.varabyte.kobweb.compose.css.Cursor
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -13,6 +14,7 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.core.rememberPageContext
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.style.toModifier
@@ -22,6 +24,7 @@ import com.varabyte.kobweb.silk.theme.shapes.clip
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.px
+import org.w3c.dom.CustomEvent
 
 @Composable
 fun ResearchBlock(
@@ -29,10 +32,12 @@ fun ResearchBlock(
     research: Researches
 ) {
     val ctx = rememberPageContext()
+
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier.fillMaxWidth().padding(leftRight = 0.5.cssRem).fontFamily(Res.Fonts.DM_SANS)
             .margin(leftRight = 0.5.cssRem).then(modifier)
+            .cursor(Cursor.Pointer)
             .onClick { if (research.link.isNotEmpty()) ctx.router.navigateTo(research.link) }
     ) {
 
