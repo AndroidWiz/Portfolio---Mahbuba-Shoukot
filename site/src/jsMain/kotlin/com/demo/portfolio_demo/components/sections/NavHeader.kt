@@ -149,7 +149,7 @@ fun NavHeader(modifier: Modifier = Modifier) {
         ) {
             var menuState by remember { mutableStateOf(SideMenuState.CLOSED) }
 
-            ColorModeButton()
+//            ColorModeButton()
             HamburgerButton(onClick = { menuState = SideMenuState.OPEN })
 
             if (menuState != SideMenuState.CLOSED) {
@@ -167,7 +167,7 @@ fun NavHeader(modifier: Modifier = Modifier) {
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             MenuItems()
-            ColorModeButton()
+//            ColorModeButton()
         }
 
         Spacer()
