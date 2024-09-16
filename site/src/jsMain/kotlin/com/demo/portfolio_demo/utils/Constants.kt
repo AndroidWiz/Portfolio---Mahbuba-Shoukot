@@ -2,13 +2,16 @@ package com.demo.portfolio_demo.utils
 
 object Constants {
     const val RESUME_URL = "https://drive.google.com/"
-    const val LINKEDIN_URL = "https://www.linkedin.com/"
+    const val LINKEDIN_URL = "https://www.linkedin.com/in/mahbuba-shoukot-5055324b/"
     const val GITHUB_URL = "https://github.com/"
     const val TWITTER_URL = "https://twitter.com/"
     const val BEHANCE_URL = "https://www.behance.net/"
     const val MEDIUM_URL = "https://medium.com/"
     const val TUMBLR_URL = "https://www.tumblr.com/m-shoukot"
+    const val FACEBOOK_URL = "https://www.facebook.com/mahbuba.shoukot"
     const val MAIL_TO = "mailto:dinabangladesh23@gmail.com"
+
+    const val KOTFOLIO_URL = "https://github.com/binayshaw7777/Kotfolio"
 
     const val HELLO_IM = "Hello I'm"
     const val MAHBUBA_SHOUKOT = "Mahbuba Shoukot"

@@ -19,6 +19,7 @@ import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.percent
 import com.demo.portfolio_demo.utils.CustomColorSchemes
 import com.demo.portfolio_demo.utils.Res
+import com.varabyte.kobweb.compose.css.Cursor
 import com.varabyte.kobweb.compose.css.FontSize
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -27,6 +28,7 @@ import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.foundation.layout.Spacer
 import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.graphics.Colors
+import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.core.PageContext
 import com.varabyte.kobweb.core.rememberPageContext
 import com.varabyte.kobweb.silk.components.forms.Button
@@ -39,6 +41,7 @@ import com.varabyte.kobweb.silk.style.base
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.toModifier
 import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.dom.Span
 
 val FooterStyle = CssStyle.base {
     Modifier.padding(topBottom = 1.5.cssRem, leftRight = 10.percent)
@@ -113,6 +116,8 @@ fun FooterContent(
     modifier: Modifier
 ) {
 
+    val ctx = rememberPageContext()
+
     Box(
         FooterStyle.toModifier().backgroundColor(footerColor).fontFamily(Res.Fonts.DM_SANS)
             .then(modifier),
@@ -120,52 +125,98 @@ fun FooterContent(
     ) {
 
         Column(
-            modifier = Modifier.fillMaxWidth().margin(top = 2.cssRem),
-            horizontalAlignment = footerColumnAlignment
+            modifier = Modifier.fillMaxWidth()
         ) {
 
-            SpanText(
-                text = "Feel free to reach out to me via mail or any of the listed mediums",
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .color(
-                        when (ColorMode.current) {
-                            ColorMode.LIGHT -> Colors.Gray
-                            ColorMode.DARK -> Colors.DimGray
+            Column(
+                modifier = Modifier.fillMaxWidth().margin(top = 2.cssRem),
+                horizontalAlignment = footerColumnAlignment
+            ) {
+
+                SpanText(
+                    text = "Feel free to reach out to me via mail or any of the listed mediums",
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .color(
+                            when (ColorMode.current) {
+                                ColorMode.LIGHT -> Colors.Gray
+                                ColorMode.DARK -> Colors.DimGray
+                            }
+                        )
+                        .textAlign(footerTextAlignment)
+                        .fontSize(FontSize.Small)
+                )
+
+//                val ctx = rememberPageContext()
+
+                if (breakpoint >= Breakpoint.MD) {
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth().padding(topBottom = 2.cssRem),
+                        horizontalArrangement = Arrangement.Start,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+
+                        EmailAndResume(ctx)
+
+                        Spacer()
+
+                        NetworkingIconButtons(ctx)
+                    }
+                } else {
+                    Column(
+                        modifier = Modifier.fillMaxWidth().padding(topBottom = 2.cssRem),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        EmailAndResume(ctx)
+
+                        Spacer()
+
+                        NetworkingIconButtons(ctx, Modifier.margin(top = 2.cssRem))
+                    }
+                }
+            }
+
+            Span(
+                attrs = Modifier.align(Alignment.CenterHorizontally).toAttrs()
+            ) {
+                SpanText(
+                    text = "Template from ",
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .color(
+                            when (ColorMode.current) {
+                                ColorMode.LIGHT -> Colors.Gray
+                                ColorMode.DARK -> Colors.DimGray
+                            }
+                        )
+//                    .textAlign(footerTextAlignment)
+                        .textAlign(TextAlign.Center)
+                        .fontSize(14.px)
+                        .lineHeight(14.px)
+//                    .align(Alignment.CenterHorizontally)
+                )
+                SpanText(
+                    text = "Kotfolio",
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .color(
+                            when (ColorMode.current) {
+                                ColorMode.LIGHT -> Colors.Black
+                                ColorMode.DARK -> Colors.White
+                            }
+                        )
+//                    .textAlign(footerTextAlignment)
+                        .textAlign(TextAlign.Center)
+                        .fontSize(14.px)
+                        .lineHeight(14.px)
+                        .cursor(Cursor.Pointer)
+                        .onClick {
+                            ctx.router.navigateTo(Constants.KOTFOLIO_URL)
                         }
-                    )
-                    .textAlign(footerTextAlignment)
-                    .fontSize(FontSize.Small)
-            )
-
-            val ctx = rememberPageContext()
-
-            if (breakpoint >= Breakpoint.MD) {
-
-                Row(
-                    modifier = Modifier.fillMaxWidth().padding(topBottom = 2.cssRem),
-                    horizontalArrangement = Arrangement.Start,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-
-                    EmailAndResume(ctx)
-
-                    Spacer()
-
-                    NetworkingIconButtons(ctx)
-                }
-            } else {
-                Column(
-                    modifier = Modifier.fillMaxWidth().padding(topBottom = 2.cssRem),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Center
-                ) {
-                    EmailAndResume(ctx)
-
-                    Spacer()
-
-                    NetworkingIconButtons(ctx, Modifier.margin(top = 2.cssRem))
-                }
+//                    .align(Alignment.CenterHorizontally)
+                )
             }
         }
     }
@@ -188,30 +239,10 @@ fun NetworkingIconButtons(ctx: PageContext, modifier: Modifier = Modifier) {
         ) {
             AppearanceAwareImage(src = Res.Images.TUMBLR_LETTER)
         }
-        /* IconButtonNoHover(
-            onClick = { ctx.router.navigateTo(Constants.LINKEDIN_URL) }
-        ) {
-            AppearanceAwareImage(src = Res.Images.LINKEDIN)
-        }
         IconButtonNoHover(
-            onClick = { ctx.router.navigateTo(Constants.GITHUB_URL) }
+            onClick = { ctx.router.navigateTo(Constants.FACEBOOK_URL) }
         ) {
-            AppearanceAwareImage(src = Res.Images.GITHUB)
+            AppearanceAwareImage(src = Res.Images.FACEBOOK)
         }
-        IconButtonNoHover(
-            onClick = { ctx.router.navigateTo(Constants.TWITTER_URL) }
-        ) {
-            AppearanceAwareImage(src = Res.Images.TWITTER_X)
-        }
-        IconButtonNoHover(
-            onClick = { ctx.router.navigateTo(Constants.BEHANCE_URL) }
-        ) {
-            AppearanceAwareImage(src = Res.Images.BEHANCE)
-        }
-        IconButtonNoHover(
-            onClick = { ctx.router.navigateTo(Constants.MEDIUM_URL) }
-        ) {
-            AppearanceAwareImage(src = Res.Images.MEDIUM)
-        }*/
     }
 }

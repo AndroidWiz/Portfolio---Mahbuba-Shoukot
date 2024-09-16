@@ -22,6 +22,7 @@ object Res {
         const val TUMBLR_ROUND = "images/Socials/tumblr-round.svg"
         const val TUMBLR_NAME = "images/Socials/tumblr-name.svg"
         const val TUMBLR_LETTER = "images/Socials/tumblr-letter.svg"
+        const val FACEBOOK = "images/Socials/facebook.svg"
 
         // Co-Activities
         const val CO_ACTIVITY_IMAGE_1 = "images/Co-Activities/Co Activity 01.jpg"
