@@ -17,19 +17,19 @@ val HeroSectionStyle = CssStyle {
             .width(100.percent)
             .fontSize(3.cssRem)
             .height(100.vh)
-            .grid {  }
+//            .grid {  }
     }
     Breakpoint.ZERO {
         Modifier
             .width(100.percent)
             .fontSize(2.5.cssRem)
-            .height(75.vh)
+            .height(90.vh)
     }
     Breakpoint.SM {
         Modifier
             .width(100.percent)
             .fontSize(2.5.cssRem)
-            .height(75.vh)
+            .height(90.vh)
     }
     Breakpoint.MD {
         Modifier
