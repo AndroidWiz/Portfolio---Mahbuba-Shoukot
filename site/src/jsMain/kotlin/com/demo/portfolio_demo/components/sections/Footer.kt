@@ -226,7 +226,7 @@ fun FooterContent(
 fun NetworkingIconButtons(ctx: PageContext, modifier: Modifier = Modifier) {
     SimpleGrid(
         modifier = modifier,
-        numColumns = numColumns(base = 5)
+        numColumns = numColumns(base = 3)
     ) {
 
         IconButtonNoHover(
