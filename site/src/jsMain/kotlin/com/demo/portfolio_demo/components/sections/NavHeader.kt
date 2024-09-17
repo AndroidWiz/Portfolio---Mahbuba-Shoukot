@@ -185,8 +185,7 @@ private fun SideMenu(menuState: SideMenuState, close: () -> Unit, onAnimationEnd
             Column(
                 Modifier
                     .fillMaxHeight()
-//                    .width(clamp(8.cssRem, 33.percent, 10.cssRem))
-                    .width(clamp(12.cssRem, 33.percent, 14.cssRem))
+                    .width(clamp(16.cssRem, 33.percent, 18.cssRem))
                     .align(Alignment.CenterEnd)
                     // Close button will appear roughly over the hamburger button, so the user can close
                     // things without moving their finger / cursor much.
