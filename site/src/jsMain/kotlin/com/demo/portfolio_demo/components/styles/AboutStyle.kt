@@ -21,13 +21,13 @@ val AboutStyle = CssStyle {
         Modifier
             .width(100.percent)
             .fontSize(2.5.cssRem)
-            .height(50.vh)
+            .height(85.vh)
     }
     Breakpoint.SM {
         Modifier
             .width(100.percent)
             .fontSize(2.5.cssRem)
-            .height(50.vh)
+            .height(85.vh)
     }
     Breakpoint.MD {
         Modifier
@@ -39,7 +39,6 @@ val AboutStyle = CssStyle {
         Modifier
             .width(100.percent)
             .fontSize(3.cssRem)
-//            .height(100.vh)
-            .height(85.vh)
+            .height(100.vh)
     }
 }
