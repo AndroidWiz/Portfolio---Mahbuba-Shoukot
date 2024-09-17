@@ -8,6 +8,7 @@ import com.varabyte.kobweb.compose.css.functions.blur
 import com.varabyte.kobweb.compose.foundation.layout.*
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.styleModifier
@@ -44,10 +45,11 @@ fun CoActivitiesBlock(
                 .heightIn(max = 270.px)
                 .overflow(Overflow.Hidden)
                 .position(Position.Relative)
+                .backgroundColor(color = Colors.White)
                 .border(
                     width = 1.px, style = LineStyle.Solid, color = when (ColorMode.current) {
-                        ColorMode.LIGHT -> Colors.Gray
-                        ColorMode.DARK -> Colors.DimGray
+                        ColorMode.LIGHT -> Color.rgb(0xFFFDD0)
+                        ColorMode.DARK -> Color.rgb(0xFFFDD0)
                     }
                 ),
             src = src,
@@ -99,7 +101,7 @@ fun CoActivitiesImage(
 //                .height(300.px)
                 .fillMaxSize()
                 .borderRadius(10.px)
-                .objectFit(ObjectFit.ScaleDown),
+                .objectFit(ObjectFit.Fill),
             src = src
         )
         Box(
@@ -133,8 +135,10 @@ fun CoActivitiesImage(
 //                    .margin(leftRight = 10.px)
                     .color(
                         when (ColorMode.current) {
-                            ColorMode.LIGHT -> Colors.Black
-                            ColorMode.DARK -> Colors.White
+//                            ColorMode.LIGHT -> Colors.Black
+//                            ColorMode.DARK -> Colors.White
+                            ColorMode.LIGHT -> Color.rgb(0xFFFDD0)
+                            ColorMode.DARK -> Color.rgb(0xFFFDD0)
                         }
                     )
                     .fontFamily(Res.Fonts.Space_Grotesk)
