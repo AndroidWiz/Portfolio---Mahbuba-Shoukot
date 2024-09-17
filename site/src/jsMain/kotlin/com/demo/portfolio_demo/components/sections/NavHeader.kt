@@ -27,6 +27,7 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.*
 import com.demo.portfolio_demo.components.widgets.IconButton
 import com.demo.portfolio_demo.toSitePalette
+import com.demo.portfolio_demo.utils.Res
 import com.varabyte.kobweb.compose.css.functions.blur
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.ui.styleModifier
@@ -40,7 +41,7 @@ import org.w3c.dom.Element
 
 val NavHeaderStyle = CssStyle.base {
     Modifier
-        .background(rgba(255, 255, 255, 0f))
+        .background(Res.Colors.FOOTER_COLOR_LIGHT)
         .fillMaxWidth().padding(1.cssRem)
         .backdropFilter(blur(4.px))
         .styleModifier {
@@ -191,7 +192,8 @@ private fun SideMenu(menuState: SideMenuState, close: () -> Unit, onAnimationEnd
                     // things without moving their finger / cursor much.
                     .padding(top = 1.cssRem, leftRight = 1.cssRem)
                     .gap(1.5.cssRem)
-                    .backgroundColor(ColorMode.current.toSitePalette().nearBackground)
+//                    .backgroundColor(ColorMode.current.toSitePalette().nearBackground)
+                    .backgroundColor(Res.Colors.FOOTER_COLOR_LIGHT)
                     .animation(
                         SideMenuSlideInAnim.toAnimation(
                             duration = 200.ms,

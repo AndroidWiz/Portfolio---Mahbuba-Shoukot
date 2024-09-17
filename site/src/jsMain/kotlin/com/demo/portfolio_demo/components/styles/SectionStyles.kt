@@ -25,7 +25,7 @@ val SectionTitleStyle = CssStyle {
 
 val SectionDescriptionStyle = CssStyle {
     base {
-        Modifier.fontSize(FontSize.XSmall)
+        Modifier.fontSize(FontSize.Small)
             .margin(topBottom = 0.75.cssRem)
     }
     Breakpoint.SM {

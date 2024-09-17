@@ -3,6 +3,7 @@ package com.demo.portfolio_demo.components.widgets
 import androidx.compose.runtime.Composable
 import com.demo.portfolio_demo.utils.Res
 import com.varabyte.kobweb.compose.css.Cursor
+import com.varabyte.kobweb.compose.css.functions.max
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -32,7 +33,8 @@ fun RoundedImage(
             modifier = Modifier
                 .fillMaxWidth()
 //                .height(300.px)
-                .fillMaxSize()
+                .heightIn(max = 300.px)
+//                .fillMaxSize()
                 .borderRadius(10.px),
             src = src
         )

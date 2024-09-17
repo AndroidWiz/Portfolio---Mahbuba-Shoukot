@@ -23,25 +23,26 @@ val HeroSectionStyle = CssStyle {
         Modifier
             .width(100.percent)
             .fontSize(2.5.cssRem)
-            .height(65.vh)
+            .height(75.vh)
     }
     Breakpoint.SM {
         Modifier
             .width(100.percent)
             .fontSize(2.5.cssRem)
-            .height(65.vh)
+            .height(75.vh)
     }
     Breakpoint.MD {
         Modifier
             .width(100.percent)
             .fontSize(2.75.cssRem)
-            .height(85.vh)
+            .height(80.vh)
     }
     Breakpoint.LG {
         Modifier
             .width(100.percent)
             .fontSize(3.cssRem)
-            .height(100.vh)
+//            .height(100.vh)
+            .height(80.vh)
     }
 }
 

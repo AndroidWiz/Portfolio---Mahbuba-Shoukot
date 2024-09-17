@@ -15,7 +15,7 @@ object Constants {
 
     const val HELLO_IM = "Hello I'm"
     const val MAHBUBA_SHOUKOT = "Mahbuba Shoukot"
-    const val AND_NICE_TO_MEET_YOU = "and Nice to meet you!"
+    const val ROLE = "Global Development Enthusiast"
     const val RESUME = "Resume"
 
     const val ABOUT_ME_TEXT = "A motivated Global Development Master's student at UEA and English Literature alumnus from American International University Dhaka (AIUB) with a Post-Graduation Diploma in International Relations from Dhaka University. Specialized in teaching, marketing, counseling, mass communication, and development. Proven experience as a Program Officer, seeking a challenging role in a reputable organization to apply my subject expertise, communication, and technical skills for mutual growth."

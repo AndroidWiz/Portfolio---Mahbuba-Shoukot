@@ -9,7 +9,9 @@ object Res {
         const val NAVIGATION_ARROW = "images/Navigation_Arrow.svg"
         const val CUSTOM_CURSOR_DARK = "images/Custom_Cursor_Dark.svg"
         const val CUSTOM_CURSOR_LIGHT = "images/Custom_Cursor_Light.svg"
-        const val MY_IMAGE = "images/My Image.jpg"
+//        const val MY_IMAGE = "images/My Image.jpg"
+        const val MY_IMAGE = "images/My Image 2.png"
+        const val MY_IMAGE_3 = "images/My Image 3.jpg"
 
 
         // Socials
@@ -54,7 +56,8 @@ object Res {
     }
 
     object Colors {
-        val FOOTER_COLOR_LIGHT = Color.Companion.rgb(0xF1F1F1)
+        val FOOTER_COLOR_LIGHT = Color.Companion.rgb(0xEBEBEB)
+//        val FOOTER_COLOR_LIGHT = Color.Companion.rgb(0xF1F1F1)
         val FOOTER_COLOR_DARK = Color.Companion.rgb(0x0D0D0D)
         val GLASS_BOX_BORDER_COLOR_LIGHT = Color.Companion.rgb(0xE9E9E9)
         val GLASS_BOX_BORDER_COLOR_DARK = Color.Companion.rgb(0x4E4E4E)

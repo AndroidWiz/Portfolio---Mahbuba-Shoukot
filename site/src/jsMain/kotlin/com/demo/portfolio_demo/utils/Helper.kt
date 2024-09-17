@@ -7,7 +7,7 @@ import com.demo.portfolio_demo.components.model.WorkExperience
 fun getAllWritings() =
     listOf(
         Pair(Res.Images.WRITING_IMAGE_08, Constants.TUMBLR_URL),
-        Pair(Res.Images.WRITING_IMAGE_09, ""),
+//        Pair(Res.Images.WRITING_IMAGE_09, ""),
     )
 
 fun getAllWorkExperience() = listOf(
@@ -19,9 +19,9 @@ fun getAllWorkExperience() = listOf(
     ),
     WorkExperience(
         sequenceNumber = "02",
-        role = "ESL Trainer (Part-time)",
+        role = "ESL Trainer (Freelance)",
         organization = "Reliable Global Studies",
-        duration = "2021 - Present"
+        duration = "Jan 2021 - Sep 2023"
     ),
     WorkExperience(
         sequenceNumber = "03",

@@ -47,10 +47,11 @@ fun ResearchBlock(
                 .padding(leftRight = 0.5.cssRem)
                 .border(
                     width = 1.px, style = LineStyle.Solid, color = when (ColorMode.current) {
-                        ColorMode.LIGHT -> Colors.Gray
-                        ColorMode.DARK -> Colors.DimGray
+                        ColorMode.LIGHT -> Color.rgb(0xFFFDD0)
+                        ColorMode.DARK -> Color.rgb(0xFFFDD0)
                     }
                 )
+                .backgroundColor(Colors.White)
                 .align(Alignment.TopCenter)// added for testing
                 .borderRadius(10.px)
                 .margin(top = 2.cssRem)
@@ -90,8 +91,10 @@ fun ResearchBlock(
             modifier = Modifier
                 .background(
                     when (ColorMode.current) {
-                        ColorMode.LIGHT -> Color.rgb(0xFAFAFA)
-                        ColorMode.DARK -> Color.rgb(0x06080B)
+//                        ColorMode.LIGHT -> Color.rgb(0xFAFAFA)
+                        ColorMode.LIGHT -> Color.rgb(0xFFFDD0)
+                        ColorMode.DARK -> Color.rgb(0xFFFDD0)
+//                        ColorMode.DARK -> Color.rgb(0x06080B)
                     }
                 )
                 .margin(left = 2.cssRem, top = 1.cssRem)
@@ -104,8 +107,8 @@ fun ResearchBlock(
                 modifier = Modifier.fontSize(20.px)
                     .color(
                         when (ColorMode.current) {
-                            ColorMode.LIGHT -> Colors.Gray
-                            ColorMode.DARK -> Colors.DimGray
+                            ColorMode.LIGHT -> Colors.Black
+                            ColorMode.DARK -> Colors.Black
                         }
                     )
                     .fontWeight(FontWeight.Medium)

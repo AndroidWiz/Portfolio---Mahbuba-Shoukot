@@ -17,6 +17,7 @@ import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.foundation.layout.*
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
@@ -114,7 +115,9 @@ fun HomeContent(imageSize: CSSpxValue) {
             attrs = SubheadlineTextStyle.toModifier().margin(top = 20.px)
                 .padding(all = 10.px)
                 .borderRadius(10.px)
-                .backgroundColor(color = Colors.Yellow)
+//                .backgroundColor(color = Color.rgb(0xFFFF99))
+//                .backgroundColor(color = Color.rgb(0xFFEE8C)) // TODO: seems good to me
+                .backgroundColor(color = Color.rgb(0xFFFDD0))
                 .toAttrs()
         ) {
             SpanText(

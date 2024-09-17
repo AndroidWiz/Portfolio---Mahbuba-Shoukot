@@ -45,7 +45,8 @@ fun CircleImage(
     ) {
         Image(
             src = src,
-            modifier = Modifier.fillMaxWidth().borderRadius(50.percent)
+//            modifier = Modifier.fillMaxWidth().borderRadius(50.percent)
+            modifier = Modifier.fillMaxWidth().borderRadius(10.px)
                 .display(DisplayStyle.Block).fillMaxHeight()
         )
     }

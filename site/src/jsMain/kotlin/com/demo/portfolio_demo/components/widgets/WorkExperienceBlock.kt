@@ -11,6 +11,7 @@ import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.components.text.SpanText
@@ -36,13 +37,14 @@ fun WorkExperienceBlock(
                 .padding(leftRight = 0.5.cssRem)
                 .border(
                     width = 1.px, style = LineStyle.Solid, color = when (ColorMode.current) {
-                        ColorMode.LIGHT -> Colors.Gray
-                        ColorMode.DARK -> Colors.DimGray
+                        ColorMode.LIGHT -> Color.rgb(0xFFFDD0)
+                        ColorMode.DARK -> Color.rgb(0xFFFDD0)
                     }
                 )
                 .align(Alignment.TopCenter)// added for testing
                 .borderRadius(10.px)
                 .margin(top = 2.cssRem)
+                .backgroundColor(Colors.White)
                 .padding(top = 30.px, bottom = 24.px, leftRight = 24.px),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.Start
