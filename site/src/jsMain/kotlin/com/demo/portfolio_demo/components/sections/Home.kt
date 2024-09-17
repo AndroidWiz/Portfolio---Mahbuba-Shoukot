@@ -25,17 +25,18 @@ import com.varabyte.kobweb.silk.components.forms.Button
 import com.varabyte.kobweb.silk.components.forms.ButtonSize
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.style.animation.toAnimation
+import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.toAttrs
 import com.varabyte.kobweb.silk.style.toModifier
+import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
-import org.jetbrains.compose.web.css.AnimationTimingFunction
-import org.jetbrains.compose.web.css.percent
-import org.jetbrains.compose.web.css.px
-import org.jetbrains.compose.web.css.s
+import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Div
 
 @Composable
 fun Home() {
+    val breakpoint = rememberBreakpoint()
+
     Box(
         modifier = HeroSectionStyle.toModifier().animation(
             HeroContainerKeyFrames.toAnimation(
@@ -43,78 +44,111 @@ fun Home() {
                 timingFunction = AnimationTimingFunction.EaseInOut
             )
         ),
-//        contentAlignment = Alignment.CenterStart
         contentAlignment = Alignment.Center
     ) {
-        Row(
-            horizontalArrangement = Arrangement.SpaceBetween,
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Column(
-                horizontalAlignment = Alignment.Start
-            ) {
-
-                SpanText(
-                    text = Constants.HELLO_IM,
-                    modifier = HelloImStyle.toModifier()
-                        .color(
-                            when (ColorMode.current) {
-                                ColorMode.LIGHT -> Colors.Gray
-                                ColorMode.DARK -> Colors.DimGray
-                            }
-                        )
-                        .fontWeight(FontWeight.Bold)
-                )
-                SpanText(
-                    text = Constants.MAHBUBA_SHOUKOT,
-                    modifier = UserNameStyle.toModifier()
-                        .color(
-                            when (ColorMode.current) {
-                                ColorMode.LIGHT -> Colors.Black
-                                ColorMode.DARK -> Colors.White
-                            }
-                        )
-                        .fontWeight(FontWeight.Bold)
-                )
-
-                Div(
-                    SubheadlineTextStyle.toModifier().margin(top = 20.px).toAttrs()
+        when (breakpoint) {
+            Breakpoint.ZERO,
+            Breakpoint.SM -> {
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier.fillMaxWidth()
                 ) {
-                    SpanText(
-                        text = Constants.AND_NICE_TO_MEET_YOU,
-                        modifier = UsersMessageStyle.toModifier()
-                            .color(
-                                when (ColorMode.current) {
-                                    ColorMode.LIGHT -> Colors.Gray
-                                    ColorMode.DARK -> Colors.DimGray
-                                }
-                            )
-                            .fontFamily(Res.Fonts.DM_SANS)
-                    )
-                }
-
-                val ctx = rememberPageContext()
-
-                Div(HeadlineTextStyle.toAttrs()) {
-                    Button(
-                        onClick = {
-                            ctx.router.navigateTo(Constants.RESUME_URL)
-                        },
-                        colorScheme = CustomColorSchemes.BlackAndWhite,
-                        size = ButtonSize.MD,
-                        modifier = ButtonStyle.toModifier().width(150.percent).margin(top = 70.px)
-                    ) {
-                        SpanText(
-                            text = Constants.RESUME,
-                            modifier = Modifier.fontFamily(Res.Fonts.Tauri)
-                        )
-                    }
+                    HomeContent(imageSize = 360.px)
                 }
             }
 
-            // Image
-            CircleImage(modifier = Modifier.size(250.px), src = Res.Images.MY_IMAGE)
+            else -> {
+                Row(
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    HomeContent(imageSize = 320.px)
+                }
+            }
         }
 
+
+    }
+}
+
+@Composable
+fun HomeContent(imageSize: CSSpxValue) {
+    // Image
+    CircleImage(
+        modifier = Modifier
+            .size(imageSize),
+        src = Res.Images.MY_IMAGE
+    )
+
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.Start
+    ) {
+
+        SpanText(
+            text = Constants.HELLO_IM,
+            modifier = HelloImStyle.toModifier()
+                .color(
+                    when (ColorMode.current) {
+                        ColorMode.LIGHT -> Colors.Gray
+                        ColorMode.DARK -> Colors.DimGray
+                    }
+                )
+                .fontWeight(FontWeight.Bold)
+        )
+        SpanText(
+            text = Constants.MAHBUBA_SHOUKOT,
+            modifier = UserNameStyle.toModifier()
+                .color(
+                    when (ColorMode.current) {
+                        ColorMode.LIGHT -> Colors.Black
+                        ColorMode.DARK -> Colors.White
+                    }
+                )
+                .fontWeight(FontWeight.Bold)
+        )
+
+        Div(
+            attrs = SubheadlineTextStyle.toModifier().margin(top = 20.px)
+                .padding(all = 10.px)
+                .borderRadius(10.px)
+                .backgroundColor(color = Colors.Yellow)
+                .toAttrs()
+        ) {
+            SpanText(
+                text = Constants.ROLE,
+                modifier = UsersMessageStyle.toModifier()
+                    .color(
+                        when (ColorMode.current) {
+//                                    ColorMode.LIGHT -> Colors.Gray
+//                                    ColorMode.DARK -> Colors.DimGray
+                            ColorMode.LIGHT -> Colors.Black
+                            ColorMode.DARK -> Colors.White
+                        }
+                    )
+                    .fontFamily(Res.Fonts.DM_SANS)
+                    .fontWeight(FontWeight.Medium)
+            )
+        }
+
+        /*val ctx = rememberPageContext()
+
+        Div(HeadlineTextStyle.toAttrs()) {
+            Button(
+                onClick = {
+                    ctx.router.navigateTo(Constants.RESUME_URL)
+                },
+                colorScheme = CustomColorSchemes.BlackAndWhite,
+                size = ButtonSize.MD,
+                modifier = ButtonStyle.toModifier().width(150.percent).margin(top = 70.px)
+            ) {
+                SpanText(
+                    text = Constants.RESUME,
+                    modifier = Modifier.fontFamily(Res.Fonts.Tauri)
+                )
+            }
+        }*/
     }
 }
