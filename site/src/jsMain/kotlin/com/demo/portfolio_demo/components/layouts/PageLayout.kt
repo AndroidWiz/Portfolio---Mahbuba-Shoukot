@@ -14,11 +14,15 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import kotlinx.browser.document
 import com.demo.portfolio_demo.components.sections.Footer
 import com.demo.portfolio_demo.components.sections.NavHeader
+import com.demo.portfolio_demo.components.widgets.AppearanceAwareImage
 import com.demo.portfolio_demo.components.widgets.BackToTopButton
+import com.demo.portfolio_demo.components.widgets.MyHomeImage
 import com.demo.portfolio_demo.utils.Res
+import com.varabyte.kobweb.compose.css.PointerEvents
 import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
+import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.*
 
 val PageContentStyle = CssStyle {
@@ -26,6 +30,16 @@ val PageContentStyle = CssStyle {
     Breakpoint.MD { Modifier.maxWidth(60.cssRem) }
 }
 
+@OptIn(ExperimentalComposeWebApi::class)
+@Composable
+fun SVGBackgroundImage(modifier: Modifier) {
+    MyHomeImage(
+        src = Res.Images.MY_IMAGE,
+        modifier = modifier.margin(top = 5.cssRem),
+//        width = 60,
+//        height = 60
+    )
+}
 
 @Composable
 fun PageLayout(title: String, content: @Composable ColumnScope.() -> Unit) {
@@ -58,6 +72,8 @@ fun PageLayout(title: String, content: @Composable ColumnScope.() -> Unit) {
             .gridTemplateRows { size(1.fr); size(minContent) },
         contentAlignment = Alignment.Center
     ) {
+//        SVGBackgroundImage(Modifier.align(Alignment.TopEnd).pointerEvents(PointerEvents.None).width(40.percent).minWidth(30.vw).styleModifier { property("height", "auto") })
+
 
         Column(
             // Isolate the content, because otherwise the absolute-positioned SVG above will render on top of it.

@@ -23,12 +23,15 @@ object Constants {
 
     const val EXPERIENCE_TITLE = "Work Experience."
 
+    const val TRAINING_TITLE = "Trainings."
+
     const val RESEARCH_TITLE = "Research."
     const val RESEARCH_SECTION_TEXT = "My research in development has focused on examining the multifaceted aspects of socio-economic progress, with a particular emphasis on sustainable development goals. Through comprehensive analysis and empirical studies, I aim to contribute meaningful insights to the ongoing discourse on fostering equitable and inclusive development strategies."
     const val RESEARCH_DISSERTATION_TEXT = "Cultural and Religious Influences on Women's Rights and the Social Prejudice Faced by Divorced Women in Bangladesh."
     const val DISSERTATION = "Dissertation: "
 
-    const val PHOTOGRAPH_TITLE = "Sometimes I love to click."
+//    const val PHOTOGRAPH_TITLE = "Sometimes I love to click."
+    const val PHOTOGRAPH_TITLE = "Photography."
 
     const val CO_CURRICULAR_ACTIVITIES_TITLE = "Co-Curricular Activities."
     const val CO_CURRICULAR_ACTIVITIES_SECTION_TEXT = "Engaged in diverse extracurricular pursuits, I actively participated in cultural events and community service, showcasing a well-rounded commitment beyond academics. My experiences have enriched my perspective and strengthened my interpersonal skills."

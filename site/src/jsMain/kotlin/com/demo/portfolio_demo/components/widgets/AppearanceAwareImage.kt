@@ -75,3 +75,28 @@ fun AppearanceAwareImage(
         ref = ref
     )
 }
+
+@OptIn(ExperimentalComposeWebApi::class)
+@Composable
+fun MyHomeImage(
+    src: String,
+    modifier: Modifier = Modifier,
+    variant: CssStyleVariant<ImageKind>? = null,
+    width: Int? = null,
+    height: Int? = null,
+    alt: String = "",
+    autoPrefix: Boolean = true,
+    ref: ElementRefScope<HTMLImageElement>? = null,
+) {
+
+    Image(
+        src = src,
+        modifier = Modifier.then(modifier),
+        variant = variant,
+        width = width,
+        height = height,
+        alt = alt,
+        autoPrefix = autoPrefix,
+        ref = ref
+    )
+}

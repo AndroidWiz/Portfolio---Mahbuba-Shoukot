@@ -4,11 +4,7 @@ import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.modifiers.borderRadius
-import com.varabyte.kobweb.compose.ui.modifiers.display
-import com.varabyte.kobweb.compose.ui.modifiers.fillMaxHeight
-import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
-import com.varabyte.kobweb.compose.ui.modifiers.padding
+import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.components.graphics.Image
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.percent
@@ -27,7 +23,14 @@ fun PhotographImage(
     ) {
         Image(
             src = src,
-            modifier = Modifier.fillMaxWidth().borderRadius(10.px).display(DisplayStyle.Block).fillMaxHeight()
+            modifier = Modifier
+//                .widthIn(max = 200.px)
+//                .heightIn(max = 200.px)
+//                .size(200.px)
+                .fillMaxWidth()
+                .borderRadius(10.px).display(DisplayStyle.Block)
+                .heightIn(max = 250.px)
+//                .fillMaxHeight()
         )
     }
 }

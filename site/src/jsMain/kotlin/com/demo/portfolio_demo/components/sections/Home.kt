@@ -115,9 +115,8 @@ fun HomeContent(imageSize: CSSpxValue) {
             attrs = SubheadlineTextStyle.toModifier().margin(top = 20.px)
                 .padding(all = 10.px)
                 .borderRadius(10.px)
-//                .backgroundColor(color = Color.rgb(0xFFFF99))
-//                .backgroundColor(color = Color.rgb(0xFFEE8C)) // TODO: seems good to me
-                .backgroundColor(color = Color.rgb(0xFFFDD0))
+                .backgroundColor(Res.Colors.FOOTER_COLOR_LIGHT)
+//                .backgroundColor(color = Color.rgb(0xFFFDD0))
                 .toAttrs()
         ) {
             SpanText(
@@ -125,10 +124,16 @@ fun HomeContent(imageSize: CSSpxValue) {
                 modifier = UsersMessageStyle.toModifier()
                     .color(
                         when (ColorMode.current) {
-//                                    ColorMode.LIGHT -> Colors.Gray
-//                                    ColorMode.DARK -> Colors.DimGray
                             ColorMode.LIGHT -> Colors.Black
-                            ColorMode.DARK -> Colors.White
+                            ColorMode.DARK -> Colors.Black
+//                                    ColorMode.LIGHT -> Color.rgb(0xFFFDD0)
+//                                    ColorMode.DARK -> Color.rgb(0xFFFDD0)
+//                            ColorMode.LIGHT -> Color.rgb(0xF2F2F2)
+//                            ColorMode.DARK -> Color.rgb(0xF2F2F2)
+//                            ColorMode.LIGHT -> Colors.Gray
+//                            ColorMode.DARK -> Colors.DimGray
+//                            ColorMode.LIGHT -> Colors.Black
+//                            ColorMode.DARK -> Colors.White
                         }
                     )
                     .fontFamily(Res.Fonts.DM_SANS)

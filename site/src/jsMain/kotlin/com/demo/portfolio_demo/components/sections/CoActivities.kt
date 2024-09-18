@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import com.demo.portfolio_demo.components.styles.CoActivityStyle
 import com.demo.portfolio_demo.components.styles.SectionDescriptionStyle
 import com.demo.portfolio_demo.components.widgets.CoActivitiesBlock
+import com.demo.portfolio_demo.components.widgets.CoActivitiesBlock2
 import com.demo.portfolio_demo.components.widgets.SectionTitle
 import com.demo.portfolio_demo.utils.Constants
 import com.demo.portfolio_demo.utils.Res
@@ -20,6 +21,7 @@ import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
+import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.px
 
 @Composable
@@ -45,13 +47,17 @@ fun CoActivities() {
                 .fontFamily(Res.Fonts.DM_SANS)
         )
 
-        SimpleGrid(modifier = Modifier.margin(top = 30.px), numColumns = numColumns(base = 1, lg = 2)) {
+        SimpleGrid(
+            modifier = Modifier.fillMaxWidth().margin(top = 3.cssRem, bottom = 6.cssRem),
+            numColumns = numColumns(base = 1, sm = 1, md = 1, lg = 2, xl = 2)
+        ) {
 
             val allCoActivities = getAllCoActivities()
 
             repeat(allCoActivities.size) {
                 val coActivity = allCoActivities[it]
                 CoActivitiesBlock(src = coActivity.first, title = coActivity.second)
+//                CoActivitiesBlock2(src = coActivity.first, title = coActivity.second)
             }
         }
     }

@@ -43,6 +43,10 @@ object Res {
         const val IMAGE_6 = "images/Photographs/Image 6.jpg"
         const val IMAGE_7 = "images/Photographs/Image 7.jpg"
         const val IMAGE_8 = "images/Photographs/Image 8.jpg"
+        const val IMAGE_9 = "images/Photographs/Image 9.jpg"
+        const val IMAGE_10 = "images/Photographs/Image 10.jpg"
+        const val IMAGE_11 = "images/Photographs/Image 11.jpg"
+        const val IMAGE_12 = "images/Photographs/Image 12.jpg"
 
         // Writings
         const val WRITING_IMAGE_08 = "images/Writings/image08.jpg"

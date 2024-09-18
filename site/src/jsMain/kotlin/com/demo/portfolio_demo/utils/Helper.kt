@@ -2,6 +2,7 @@ package com.demo.portfolio_demo.utils
 
 import com.demo.portfolio_demo.components.model.EducationData
 import com.demo.portfolio_demo.components.model.Researches
+import com.demo.portfolio_demo.components.model.Trainings
 import com.demo.portfolio_demo.components.model.WorkExperience
 
 fun getAllWritings() =
@@ -63,9 +64,19 @@ fun getAllPhotographs() =
         Res.Images.IMAGE_6,
         Res.Images.IMAGE_7,
         Res.Images.IMAGE_8,
+        Res.Images.IMAGE_9,
+        Res.Images.IMAGE_10,
+        Res.Images.IMAGE_11,
+        Res.Images.IMAGE_12,
     )
 
 fun getAllResearch() = listOf(
+    Researches(
+        title = "Cultural and Religious Influences on Women's Rights and the Social Prejudice Faced by Divorced Women in Bangladesh.",
+        subTitle = "",
+        link = "",
+        type = "Dissertation"
+    ),
     Researches(
         title = "Coetzee’s Disgrace: Rape and Escape connection to Bangladeshi perspectives.",
         subTitle = "ARJEL (American Research Journal of English language and Literature) Volume 7 DOI: : 10.21694/2378-9026.21009",
@@ -156,4 +167,33 @@ fun getAllEducation() = listOf(
         institution = "American International University of Bangladesh (AIUB)",
         duration = "2013 - 2016"
     )
+)
+
+
+fun getAllTrainings() = listOf(
+    Trainings(
+        title = "TESOL Methodology (online), University of Maryland,2020",
+        topic = "",
+        link = ""
+    ),
+    Trainings(
+        title = "IB administration and coordination",
+        topic = "UOI integration with other subjects Abdul Kadir Molla International School (AKMIS)Bangladesh In House",
+        link = ""
+    ),
+    Trainings(
+        title = "The vital role of the teaching in the PYP Implementing different strategies for Development Abdul Kadir Molla International School (AKMIS)",
+        topic = "",
+        link = ""
+    ),
+    Trainings(
+        title = "Anti-radicalisation & 'Prevent' - Awareness Training for Schools",
+        topic = "",
+        link = "https://www.candidatego.com/certificate/84ADuq8X5ss3XJ74EmicYq"
+    ),
+    Trainings(
+        title = "Safeguarding - An Introduction for Teachers and Staff",
+        topic = "",
+        link = "https://www.candidatego.com/certificate/GxWfSJQhyYaLczVEKMJAwy"
+    ),
 )

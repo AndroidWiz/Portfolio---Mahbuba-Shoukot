@@ -48,7 +48,7 @@ fun Research() {
                 .fontFamily(Res.Fonts.DM_SANS)
         )
 
-        Span(
+    /*    Span(
             SectionDescriptionStyle.toModifier()
                 .textAlign(TextAlign.Center)
                 .fontFamily(Res.Fonts.DM_SANS)
@@ -73,7 +73,7 @@ fun Research() {
                         }
                     )
             )
-        }
+        }*/
         /*SpanText(
             text = Constants.RESEARCH_DISSERTATION_TEXT,
             modifier = SectionDescriptionStyle.toModifier()

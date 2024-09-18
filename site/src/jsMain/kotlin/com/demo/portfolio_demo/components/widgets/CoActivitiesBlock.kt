@@ -34,13 +34,7 @@ fun CoActivitiesBlock(
             .margin(leftRight = 0.5.cssRem, topBottom = 0.25.cssRem)
             .then(modifier)
     ) {
-
-        /*Column(
-            modifier = modifier.fillMaxWidth()
-                .margin(topBottom = 6.px)
-                .padding(topBottom = 6.px)
-        ) {*/
-        CoActivitiesImage(
+        /*CoActivitiesImage(
             modifier = modifier.fillMaxWidth()
                 .heightIn(max = 270.px)
                 .overflow(Overflow.Hidden)
@@ -54,27 +48,126 @@ fun CoActivitiesBlock(
                 ),
             src = src,
             title = title
-        )
-        /*   SpanText(
-               text = title,
-               modifier = CoActivityItemTitleStyle.toModifier()
-                   .fillMaxWidth()
-                   .margin(leftRight = 10.px)
-                   .color(
-                       when (ColorMode.current) {
-                           ColorMode.LIGHT -> Colors.Black
-                           ColorMode.DARK -> Colors.White
-                       }
-                   )
-                   .fontFamily(Res.Fonts.Space_Grotesk)
-                   .fontWeight(FontWeight.Medium)
-           )*/
-//        }
+        )*/
+        CoActivitiesBlock2(modifier = modifier, src = src, title = title)
 
     }
 }
 
 @Composable
+fun CoActivitiesBlock2(
+    modifier: Modifier = Modifier,
+    src: String,
+    title: String
+) {
+
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier
+//            .margin(leftRight = 0.5.cssRem)
+            .fillMaxWidth()
+            .heightIn(min = 270.px, max = 270.px)
+//            .fillMaxSize()
+//            .padding(leftRight = 0.5.cssRem, topBottom = 0.25.cssRem)
+            .margin(topBottom = 0.5.cssRem)
+//            .margin(leftRight = 0.5.cssRem, topBottom = 0.25.cssRem)
+            .borderRadius(10.px)
+            .overflow(Overflow.Hidden)
+            .position(Position.Relative)
+            .backgroundColor(color = Colors.White)
+            .border(
+                width = 1.px, style = LineStyle.Solid, color = when (ColorMode.current) {
+                    ColorMode.LIGHT -> Color.rgb(0xFFFDD0)
+                    ColorMode.DARK -> Color.rgb(0xFFFDD0)
+                }
+            )
+            .then(modifier)
+    ) {
+        Image(
+//            modifier = Modifier.fillMaxSize().heightIn(max = 270.px).borderRadius(10.px),
+            modifier = Modifier.fillMaxSize()
+//                .fillMaxWidth()
+                .position(Position.Absolute)
+                .heightIn(min = 270.px, max = 270.px)
+                .borderRadius(10.px)
+                .objectFit(ObjectFit.Fill),
+            src = src
+        )
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .borderRadius(10.px)
+        ) {
+            SpanText(
+                text = title,
+                modifier = CoActivityItemTitleStyle.toModifier()
+                    .fillMaxWidth()
+                    .align(Alignment.BottomCenter)
+                    .padding(leftRight = 10.px, topBottom = 10.px)
+                    .color(
+                        when (ColorMode.current) {
+                            ColorMode.LIGHT -> Colors.White
+                            ColorMode.DARK -> Colors.White
+                        }
+                    )
+                    .fontFamily(Res.Fonts.Space_Grotesk)
+                    .fontWeight(FontWeight.Medium)
+                    .backdropFilter(if (title.isNotEmpty()) blur(30.px) else blur(0.px))
+            )
+        }
+    }
+}
+
+@Composable
+fun CoActivitiesImage(
+    modifier: Modifier = Modifier,
+    src: String,
+    title: String
+) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .borderRadius(10.px).then(modifier)
+    ) {
+        Image(
+            modifier = Modifier
+//                .fillMaxWidth()
+//                .position(Position.Absolute)
+//                .heightIn(100.px)
+//                .height(300.px)
+                .fillMaxSize()
+                .borderRadius(10.px)
+                .objectFit(ObjectFit.Fill),
+            src = src
+        )
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .borderRadius(10.px)
+        ) {
+            SpanText(
+                text = title,
+                modifier = CoActivityItemTitleStyle.toModifier()
+                    .fillMaxWidth()
+                    .align(Alignment.BottomCenter)
+//                    .margin(bottom = 10.px)
+                    .padding(leftRight = 10.px, topBottom = 10.px)
+//                    .margin(leftRight = 10.px)
+                    .color(
+                        when (ColorMode.current) {
+                            ColorMode.LIGHT -> Colors.White
+                            ColorMode.DARK -> Colors.White
+                        }
+                    )
+                    .fontFamily(Res.Fonts.Space_Grotesk)
+                    .fontWeight(FontWeight.Medium)
+                    .backdropFilter(if (title.isNotEmpty()) blur(30.px) else blur(0.px))
+            )
+        }
+    }
+}
+
+/*@Composable
 fun CoActivitiesImage(
     modifier: Modifier = Modifier,
     src: String,
@@ -90,7 +183,8 @@ fun CoActivitiesImage(
 //            ColorMode.LIGHT -> "linear-gradient(180deg, rgba(255, 255, 255, 0.00) 70%, rgba(255, 255, 255, 0.71) 100%)"
 //            ColorMode.LIGHT -> "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 75%, rgba(0, 0, 0, 0.55) 100%)"
             ColorMode.LIGHT -> "linear-gradient(180deg, rgba(255, 255, 255, 0.00) 75%, rgba(128, 128, 128, 0.75) 100%)"  // Grayish for light mode
-            ColorMode.DARK -> "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 70%, rgba(0, 0, 0, 0.71) 100%)"
+            ColorMode.DARK -> "linear-gradient(180deg, rgba(255, 255, 255, 0.00) 75%, rgba(128, 128, 128, 0.75) 100%)"  // Grayish for light mode
+//            ColorMode.DARK -> "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 70%, rgba(0, 0, 0, 0.71) 100%)"
         }
 
         Image(
@@ -111,20 +205,20 @@ fun CoActivitiesImage(
 //                .styleModifier {
 //                    property("background", backgroundGradient)
 //                }
-                /*.styleModifier {
+                *//*.styleModifier {
                     property(
                         "background",
 //                        "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 50.52%, rgba(0, 0, 0, 0.71) 100%)"
                         "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 75%, rgba(0, 0, 0, 0.71) 100%)"
                     )
-                }*/
+                }*//*
         ) {
-            /*Image(
+            *//*Image(
                 src = Res.Images.TUMBLR_ROUND,
                 modifier = Modifier.size(22.px)
                     .align(Alignment.BottomEnd)
                     .margin(bottom = 10.px, right = 10.px)
-            )*/
+            )*//*
             SpanText(
                 text = title,
                 modifier = CoActivityItemTitleStyle.toModifier()
@@ -137,8 +231,10 @@ fun CoActivitiesImage(
                         when (ColorMode.current) {
 //                            ColorMode.LIGHT -> Colors.Black
 //                            ColorMode.DARK -> Colors.White
-                            ColorMode.LIGHT -> Color.rgb(0xFFFDD0)
-                            ColorMode.DARK -> Color.rgb(0xFFFDD0)
+//                            ColorMode.LIGHT -> Color.rgb(0xFFFDD0)
+//                            ColorMode.DARK -> Color.rgb(0xFFFDD0)
+                            ColorMode.LIGHT -> Colors.White
+                            ColorMode.DARK -> Colors.White
                         }
                     )
                     .fontFamily(Res.Fonts.Space_Grotesk)
@@ -147,7 +243,7 @@ fun CoActivitiesImage(
             )
         }
     }
-}
+}*/
 
 /*Box(
     modifier = Modifier

@@ -26,6 +26,7 @@ fun HomePage() {
                     Education()
                     Research()
                     Experience()
+                    Training()
                     CoActivities()
                     Photography()
                     Writings()
