@@ -7,8 +7,19 @@ import com.demo.portfolio_demo.components.model.WorkExperience
 
 fun getAllWritings() =
     listOf(
-        Pair(Res.Images.WRITING_IMAGE_08, Constants.TUMBLR_URL),
-//        Pair(Res.Images.WRITING_IMAGE_09, ""),
+        Pair(
+            Res.Images.WRITING_IMAGE_01,
+            "https://www.tumblr.com/m-shoukot/653144340838940672/drop-of-blessings-splash-of-water-are-coming"
+        ),
+        Pair(
+            Res.Images.WRITING_IMAGE_02,
+            "https://www.tumblr.com/m-shoukot/635325566458937344/autumn-beauty-which-blow-my-mind-to-the-nature"
+        ),
+        Pair(Res.Images.WRITING_IMAGE_03, "https://www.tumblr.com/m-shoukot/634953496066752512/blind-humanity"),
+        Pair(
+            Res.Images.WRITING_IMAGE_04,
+            "https://www.tumblr.com/m-shoukot/639430050248261632/sky-has-no-limits-like-i-don-have-any-certain"
+        )
     )
 
 fun getAllWorkExperience() = listOf(

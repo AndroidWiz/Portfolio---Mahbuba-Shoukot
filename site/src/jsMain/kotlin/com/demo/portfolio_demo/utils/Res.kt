@@ -49,8 +49,10 @@ object Res {
         const val IMAGE_12 = "images/Photographs/Image 12.jpg"
 
         // Writings
-        const val WRITING_IMAGE_08 = "images/Writings/image08.jpg"
-        const val WRITING_IMAGE_09 = "images/Writings/image09.jpg"
+        const val WRITING_IMAGE_01 = "images/Writings/Writing Image 1.jpeg"
+        const val WRITING_IMAGE_02 = "images/Writings/Writing Image 2.jpeg"
+        const val WRITING_IMAGE_03 = "images/Writings/Writing Image 3.jpeg"
+        const val WRITING_IMAGE_04 = "images/Writings/Writing Image 4.jpeg"
     }
 
     object Fonts {

@@ -70,7 +70,8 @@ fun Writings() {
                 modifier = Modifier
 //                    .fillMaxSize()
                     .fillMaxWidth()
-                    .heightIn(min = 300.px, max = 300.px)
+                    .heightIn(min = 265.px, max = 265.px)
+//                    .heightIn(min = 300.px, max = 300.px)
                     .padding(topBottom = 50.px),
                 contentAlignment = Alignment.Center
             ) {
