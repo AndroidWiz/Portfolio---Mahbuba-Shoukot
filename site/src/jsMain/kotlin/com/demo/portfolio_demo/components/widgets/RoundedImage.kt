@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import com.demo.portfolio_demo.utils.Res
 import com.varabyte.kobweb.compose.css.Cursor
 import com.varabyte.kobweb.compose.css.functions.max
+import com.varabyte.kobweb.compose.css.functions.min
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -22,7 +23,11 @@ fun RoundedImage(
     val ctx = rememberPageContext()
 
     Box(
-        modifier = Modifier.fillMaxSize().padding(5.px).borderRadius(10.px).then(modifier).cursor(Cursor.Pointer)
+        modifier = Modifier
+//            .fillMaxSize()
+            .fillMaxWidth()
+            .heightIn(min = 300.px, max = 300.px)
+            .padding(5.px).borderRadius(10.px).then(modifier).cursor(Cursor.Pointer)
             .onClick {
                 navigateTo?.let {
                     ctx.router.navigateTo(it)
@@ -33,7 +38,7 @@ fun RoundedImage(
             modifier = Modifier
                 .fillMaxWidth()
 //                .height(300.px)
-                .heightIn(max = 300.px)
+                .heightIn(min = 300.px, max = 300.px)
 //                .fillMaxSize()
                 .borderRadius(10.px),
             src = src
