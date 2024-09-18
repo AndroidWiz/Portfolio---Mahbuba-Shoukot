@@ -4,7 +4,6 @@ import androidx.compose.runtime.Composable
 import com.demo.portfolio_demo.components.styles.CoActivityStyle
 import com.demo.portfolio_demo.components.styles.SectionDescriptionStyle
 import com.demo.portfolio_demo.components.widgets.CoActivitiesBlock
-import com.demo.portfolio_demo.components.widgets.CoActivitiesBlock2
 import com.demo.portfolio_demo.components.widgets.SectionTitle
 import com.demo.portfolio_demo.utils.Constants
 import com.demo.portfolio_demo.utils.Res
@@ -22,7 +21,6 @@ import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.cssRem
-import org.jetbrains.compose.web.css.px
 
 @Composable
 fun CoActivities() {
@@ -57,7 +55,6 @@ fun CoActivities() {
             repeat(allCoActivities.size) {
                 val coActivity = allCoActivities[it]
                 CoActivitiesBlock(src = coActivity.first, title = coActivity.second)
-//                CoActivitiesBlock2(src = coActivity.first, title = coActivity.second)
             }
         }
     }
