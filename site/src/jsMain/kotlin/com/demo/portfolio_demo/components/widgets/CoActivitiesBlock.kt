@@ -56,11 +56,11 @@ fun CoActivitiesBlock2(
             .position(Position.Relative)
             .backgroundColor(color = Colors.White)
             .border(
-                width = 1.px, style = LineStyle.Solid, color = when (ColorMode.current) {
+                width = 2.px, style = LineStyle.Solid, color = when (ColorMode.current) {
 //                    ColorMode.LIGHT -> Color.rgb(0xFFFDD0)
 //                    ColorMode.DARK -> Color.rgb(0xFFFDD0)
-                    ColorMode.LIGHT -> Colors.White
-                    ColorMode.DARK -> Colors.White
+                    ColorMode.LIGHT -> Res.Colors.FOOTER_COLOR_LIGHT
+                    ColorMode.DARK -> Res.Colors.FOOTER_COLOR_LIGHT
                 }
             )
             .then(modifier)

@@ -46,9 +46,9 @@ fun ResearchBlock(
                 .fillMaxWidth()
                 .padding(leftRight = 0.5.cssRem)
                 .border(
-                    width = 1.px, style = LineStyle.Solid, color = when (ColorMode.current) {
-                        ColorMode.LIGHT -> Color.rgb(0xFFFDD0)
-                        ColorMode.DARK -> Color.rgb(0xFFFDD0)
+                    width = 2.px, style = LineStyle.Solid, color = when (ColorMode.current) {
+                        ColorMode.LIGHT -> Res.Colors.FOOTER_COLOR_LIGHT
+                        ColorMode.DARK -> Res.Colors.FOOTER_COLOR_LIGHT
                     }
                 )
                 .backgroundColor(Colors.White)
@@ -92,14 +92,14 @@ fun ResearchBlock(
                 .background(
                     when (ColorMode.current) {
 //                        ColorMode.LIGHT -> Color.rgb(0xFAFAFA)
-                        ColorMode.LIGHT -> Color.rgb(0xFFFDD0)
-                        ColorMode.DARK -> Color.rgb(0xFFFDD0)
+                        ColorMode.LIGHT -> Res.Colors.FOOTER_COLOR_LIGHT
+                        ColorMode.DARK -> Res.Colors.FOOTER_COLOR_LIGHT
 //                        ColorMode.DARK -> Color.rgb(0x06080B)
                     }
                 )
                 .margin(left = 2.cssRem, top = 1.cssRem)
-                .padding(leftRight = 1.cssRem)
-                .clip(shape = Rect(5, 12.px))
+                .padding(leftRight = 1.5.cssRem)
+                .clip(shape = Rect(5, 10.px))
                 .align(Alignment.TopStart)
         ) {
             SpanText(

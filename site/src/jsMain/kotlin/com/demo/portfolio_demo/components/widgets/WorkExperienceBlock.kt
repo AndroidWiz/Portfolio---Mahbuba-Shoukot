@@ -36,9 +36,9 @@ fun WorkExperienceBlock(
                 .fillMaxWidth()
                 .padding(leftRight = 0.5.cssRem)
                 .border(
-                    width = 1.px, style = LineStyle.Solid, color = when (ColorMode.current) {
-                        ColorMode.LIGHT -> Color.rgb(0xFFFDD0)
-                        ColorMode.DARK -> Color.rgb(0xFFFDD0)
+                    width = 2.px, style = LineStyle.Solid, color = when (ColorMode.current) {
+                        ColorMode.LIGHT -> Res.Colors.FOOTER_COLOR_LIGHT
+                        ColorMode.DARK -> Res.Colors.FOOTER_COLOR_LIGHT
                     }
                 )
                 .align(Alignment.TopCenter)// added for testing
