@@ -54,7 +54,18 @@ fun TrainingBlock(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.Start
         ) {
-
+            SpanText(
+                text = if(training.topic.isNotEmpty()) "Topic - ${training.topic}" else "",
+                modifier = ResearchItemSubtitleStyle.toModifier()
+                    .fillMaxWidth()
+                    .color(
+                        when (ColorMode.current) {
+                            ColorMode.LIGHT -> Colors.DimGray
+                            ColorMode.DARK -> Colors.Gray
+                        }
+                    )
+                    .fontWeight(FontWeight.Bold)
+            )
             SpanText(
                 text = training.title,
                 modifier = ResearchItemTitleStyle.toModifier()
@@ -69,7 +80,7 @@ fun TrainingBlock(
                     .fontWeight(FontWeight.Bold)
             )
             SpanText(
-                text = training.topic,
+                text = training.organisation,
                 modifier = ResearchItemSubtitleStyle.toModifier()
                     .fillMaxWidth()
                     .color(

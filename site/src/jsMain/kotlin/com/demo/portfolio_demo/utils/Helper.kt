@@ -183,28 +183,33 @@ fun getAllEducation() = listOf(
 
 fun getAllTrainings() = listOf(
     Trainings(
-        title = "TESOL Methodology (online), University of Maryland,2020",
+        title = "TESOL Methodology (online)",
         topic = "",
+        organisation = "University of Maryland, 2020",
         link = ""
     ),
     Trainings(
         title = "IB administration and coordination",
-        topic = "UOI integration with other subjects Abdul Kadir Molla International School (AKMIS)Bangladesh In House",
+        topic = "UOI integration with other subjects",
+        organisation = "Abdul Kadir Molla International School (AKMIS), Bangladesh( In House )",
         link = ""
     ),
     Trainings(
-        title = "The vital role of the teaching in the PYP Implementing different strategies for Development Abdul Kadir Molla International School (AKMIS)",
+        title = "The vital role of the teaching in the PYP Implementing different strategies for Development",
         topic = "",
+        organisation = "Abdul Kadir Molla International School (AKMIS), Bangladesh",
         link = ""
     ),
     Trainings(
         title = "Anti-radicalisation & 'Prevent' - Awareness Training for Schools",
         topic = "",
+        organisation = "",
         link = "https://www.candidatego.com/certificate/84ADuq8X5ss3XJ74EmicYq"
     ),
     Trainings(
         title = "Safeguarding - An Introduction for Teachers and Staff",
         topic = "",
+        organisation = "",
         link = "https://www.candidatego.com/certificate/GxWfSJQhyYaLczVEKMJAwy"
     ),
 )

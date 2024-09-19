@@ -30,6 +30,7 @@ fun PhotographImage(
                 .fillMaxWidth()
                 .borderRadius(10.px).display(DisplayStyle.Block)
                 .heightIn(max = 250.px)
+//                .objectFit(ObjectFit.Cover) // TODO: works okay I guess
 //                .fillMaxHeight()
         )
     }
