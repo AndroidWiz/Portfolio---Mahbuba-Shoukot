@@ -88,7 +88,7 @@ fun Research() {
         )*/
 
         SimpleGrid(
-            modifier = Modifier.fillMaxWidth().margin(top = 1.cssRem),
+            modifier = Modifier.fillMaxWidth(),
             numColumns = numColumns(base = 1)
         ) {
 

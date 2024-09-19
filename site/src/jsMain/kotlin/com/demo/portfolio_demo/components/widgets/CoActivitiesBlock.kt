@@ -8,12 +8,13 @@ import com.varabyte.kobweb.compose.css.functions.blur
 import com.varabyte.kobweb.compose.foundation.layout.*
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.text.SpanText
+import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.toModifier
+import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.*
 import kotlin.math.max
@@ -25,14 +26,17 @@ fun CoActivitiesBlock(
     title: String
 ) {
 
+    val breakpoint = rememberBreakpoint()
+
     Box(
-        contentAlignment = Alignment.TopCenter,
-        modifier = Modifier.fillMaxWidth()
+        contentAlignment = Alignment.Center,
+        modifier = Modifier
+            .fillMaxWidth()
             .padding(leftRight = 0.5.cssRem, topBottom = 0.25.cssRem)
-            .margin(leftRight = 0.5.cssRem, topBottom = 0.25.cssRem)
+//            .margin(leftRight = 0.5.cssRem, topBottom = 0.25.cssRem)
             .then(modifier)
     ) {
-        CoActivitiesBlock2(modifier = modifier, src = src, title = title)
+        CoActivitiesBlock2(modifier = modifier, src = src, title = title, breakpoint = breakpoint)
 
     }
 }
@@ -41,7 +45,8 @@ fun CoActivitiesBlock(
 fun CoActivitiesBlock2(
     modifier: Modifier = Modifier,
     src: String,
-    title: String
+    title: String,
+    breakpoint: Breakpoint
 ) {
 
     Box(
@@ -49,8 +54,15 @@ fun CoActivitiesBlock2(
         modifier = Modifier
             .fillMaxWidth()
 //            .heightIn(min = 200.px, max = 270.px)
-            .heightIn(min = 270.px)
-            .margin(topBottom = 0.5.cssRem)
+//            .heightIn(min = 270.px)
+            .heightIn(when (breakpoint) {
+                    Breakpoint.ZERO,
+                    Breakpoint.SM,
+                    Breakpoint.MD -> 200.px
+                    else -> 270.px
+                }
+            )
+            .margin(topBottom = 0.25.cssRem)
             .borderRadius(10.px)
             .overflow(Overflow.Hidden)
             .position(Position.Relative)
@@ -82,7 +94,7 @@ fun CoActivitiesBlock2(
                 modifier = CoActivityItemTitleStyle.toModifier()
                     .fillMaxWidth()
                     .align(Alignment.BottomCenter)
-                    .padding(leftRight = 10.px, topBottom = 10.px)
+                    .padding(all = 10.px)
                     .color(
                         when (ColorMode.current) {
                             ColorMode.LIGHT -> Colors.White

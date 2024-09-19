@@ -35,8 +35,9 @@ fun ResearchBlock(
 
     Box(
         contentAlignment = Alignment.Center,
-        modifier = Modifier.fillMaxWidth().padding(leftRight = 0.5.cssRem).fontFamily(Res.Fonts.DM_SANS)
-            .margin(leftRight = 0.5.cssRem).then(modifier)
+        modifier = Modifier.fillMaxWidth()
+            .fontFamily(Res.Fonts.DM_SANS)
+            .then(modifier)
             .cursor(Cursor.Pointer)
             .onClick { if (research.link.isNotEmpty()) ctx.router.navigateTo(research.link) }
     ) {
@@ -54,7 +55,7 @@ fun ResearchBlock(
                 .backgroundColor(Colors.White)
                 .align(Alignment.TopCenter)// added for testing
                 .borderRadius(10.px)
-                .margin(top = 2.cssRem)
+                .margin(top = 1.5.cssRem)
                 .padding(top = 30.px, bottom = 24.px, leftRight = 24.px),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.Start
@@ -97,7 +98,7 @@ fun ResearchBlock(
 //                        ColorMode.DARK -> Color.rgb(0x06080B)
                     }
                 )
-                .margin(left = 2.cssRem, top = 1.cssRem)
+                .margin(left = 2.cssRem, top = 0.5.cssRem)
                 .padding(leftRight = 1.5.cssRem)
                 .clip(shape = Rect(5, 10.px))
                 .align(Alignment.TopStart)

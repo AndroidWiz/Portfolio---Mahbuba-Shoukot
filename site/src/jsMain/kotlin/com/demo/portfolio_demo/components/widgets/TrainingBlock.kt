@@ -30,8 +30,9 @@ fun TrainingBlock(
 
     Box(
         contentAlignment = Alignment.Center,
-        modifier = Modifier.fillMaxWidth().padding(leftRight = 0.5.cssRem).fontFamily(Res.Fonts.DM_SANS)
-            .margin(leftRight = 0.5.cssRem).then(modifier)
+        modifier = Modifier.fillMaxWidth()
+            .fontFamily(Res.Fonts.DM_SANS)
+            .then(modifier)
             .cursor(Cursor.Pointer)
             .onClick { if (training.link.isNotEmpty()) ctx.router.navigateTo(training.link) }
     ) {
@@ -39,7 +40,6 @@ fun TrainingBlock(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(leftRight = 0.5.cssRem)
                 .border(
                     width = 2.px, style = LineStyle.Solid, color = when (ColorMode.current) {
                         ColorMode.LIGHT -> Res.Colors.FOOTER_COLOR_LIGHT
@@ -47,10 +47,10 @@ fun TrainingBlock(
                     }
                 )
                 .backgroundColor(Colors.White)
-                .align(Alignment.TopCenter)// added for testing
+                .align(Alignment.TopCenter)
                 .borderRadius(10.px)
-                .margin(top = 2.cssRem)
-                .padding(top = 30.px, bottom = 24.px, leftRight = 24.px),
+                .margin(top = 0.35.cssRem)
+                .padding(all = 24.px),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.Start
         ) {

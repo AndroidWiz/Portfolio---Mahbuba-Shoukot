@@ -11,7 +11,6 @@ import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.components.text.SpanText
@@ -28,7 +27,11 @@ fun WorkExperienceBlock(
 ) {
     Box(
         contentAlignment = Alignment.Center,
-        modifier = Modifier.fillMaxWidth().padding(leftRight = 0.5.cssRem).fontFamily(Res.Fonts.DM_SANS).margin(leftRight = 0.5.cssRem).then(modifier)
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(leftRight = 0.5.cssRem)
+            .fontFamily(Res.Fonts.DM_SANS)
+            .then(modifier)
     ) {
 
         Column(
@@ -41,11 +44,11 @@ fun WorkExperienceBlock(
                         ColorMode.DARK -> Res.Colors.FOOTER_COLOR_LIGHT
                     }
                 )
-                .align(Alignment.TopCenter)// added for testing
+                .align(Alignment.TopCenter)
                 .borderRadius(10.px)
-                .margin(top = 2.cssRem)
+                .margin(top = 1.85.cssRem)
                 .backgroundColor(Colors.White)
-                .padding(top = 30.px, bottom = 24.px, leftRight = 24.px),
+                .padding(all = 25.px),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.Start
         ) {
@@ -90,7 +93,7 @@ fun WorkExperienceBlock(
 
         SpanText(
             text = workExperience.sequenceNumber,
-            modifier = Modifier.fontSize(3.cssRem)
+            modifier = Modifier.fontSize(2.5.cssRem)
                 .color(
                     when (ColorMode.current) {
                         ColorMode.LIGHT -> Colors.Black
