@@ -1,7 +1,7 @@
 package com.demo.portfolio_demo.utils
 
 object Constants {
-    const val RESUME_URL = "https://drive.google.com/"
+    const val RESUME_URL = "pdf/CV of Mahbuba Shoukot.pdf"
     const val LINKEDIN_URL = "https://www.linkedin.com/in/mahbuba-shoukot-5055324b/"
     const val GITHUB_URL = "https://github.com/"
     const val TWITTER_URL = "https://twitter.com/"
