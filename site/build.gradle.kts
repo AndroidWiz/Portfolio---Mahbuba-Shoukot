@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kobweb.application)
-    alias(libs.plugins.kobwebx.markdown)
+//    alias(libs.plugins.kobwebx.markdown)
 }
 
 group = "com.demo.portfolio_demo"
@@ -47,7 +47,7 @@ kotlin {
             // This default template uses built-in SVG icons, but what's available is limited.
             // Uncomment the following if you want access to a large set of font-awesome icons:
             // implementation(libs.silk.icons.fa)
-            implementation(libs.kobwebx.markdown)
+//            implementation(libs.kobwebx.markdown)
         }
 
         // Uncomment the following if you pass `includeServer = true` into the `configAsKobwebApplication` call.
