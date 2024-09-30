@@ -14,7 +14,7 @@ version = "1.0-SNAPSHOT"
 kobweb {
     app {
         index {
-            description.set("Powered by Kobweb")
+            description.set("Personal Portfolio of Mahbuba Shoukot")
             head.add {
                 link(rel = "preconnect", href = "https://fonts.googleapis.com")
                 link(
